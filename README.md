@@ -105,6 +105,62 @@ project-root/
 - `DELETE /api/users/:id` - Delete user
 
 
+## 🔧 Installation & Setup
+
+### Prerequisites
+- Node.js (v16 or higher) - [Download here](https://nodejs.org/en)
+- XAMPP - [Download here](https://www.apachefriends.org/download.html)
+- npm (comes with Node.js)
+
+### 🔗 Step 1: Start XAMPP MySQL
+1. Open XAMPP Control Panel.  
+2. Click **Start** for Apache *(optional, for phpMyAdmin)*.  
+3. Click **Start** for MySQL *(required!)*.  
+4. MySQL should now be running on port **xxxx**.
+
+### Step 2: Create Database
+1. Open browser: http://localhost/phpmyadmin
+2. Click New (left sidebar)
+3. Database name: `interviewbuddy_db`
+4. Collation: `utf8mb4_general_ci`
+5. Click Create
+
+### Step 3: Clone & Setup Backend
+```
+# Clone repository
+git clone https://github.com/yourusername/b2b-management-system.git
+cd b2b-management-system
+
+# Navigate to backend
+cd Backend
+
+# Install dependencies
+npm install
+```
+
+### Step 4: Configure Environment Variables
+Create .env file in Backend/ folder:
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=<db_password>
+DB_NAME=<db_name>
+DB_DIALECT=mysql
+PORT=5000
+```
+**Note:** XAMPP MySQL default password is empty (no password). If you set a password in XAMPP, update DB_PASSWORD accordingly.
+
+### Step 5: Start Backend Server
+`npm run dev`
+You should see:
+like ![this](https://ibb.co/NwNMhDs)
+
+
+
+
+
+
+
 
 
 
