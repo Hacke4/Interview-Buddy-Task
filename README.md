@@ -45,8 +45,12 @@ project-root/
 │   │   │   └── userRoutes.js
 │   │   └── middleware/
 │   │   │   └── upload.js
+│   │   └── app.js
+│   │   └── server.js
 │   ├── uploads/
-│   ├── server.js
+│   ├── .env
+│   ├── README.md
+│   ├── pacakage-lock.json
 │   └── package.json
 │
 ├── Frontend/
@@ -99,6 +103,7 @@ project-root/
 - `POST /api/users` - Create user
 - `PUT /api/users/:id` - Update user
 - `DELETE /api/users/:id` - Delete user
+
 
 
 
