@@ -112,20 +112,20 @@ project-root/
 - XAMPP - [Download here](https://www.apachefriends.org/download.html)
 - npm (comes with Node.js)
 
-### 🔗 Step 1: Start XAMPP MySQL
+### Step 1️⃣: Start XAMPP MySQL
 1. Open XAMPP Control Panel.  
 2. Click **Start** for Apache *(optional, for phpMyAdmin)*.  
 3. Click **Start** for MySQL *(required!)*.  
 4. MySQL should now be running on port **xxxx**.
 
-### Step 2: Create Database
+### Step 2️⃣: Create Database
 1. Open browser: http://localhost/phpmyadmin
 2. Click New (left sidebar)
 3. Database name: `interviewbuddy_db`
 4. Collation: `utf8mb4_general_ci`
 5. Click Create
 
-### Step 3: Clone & Setup Backend
+### Step 3️⃣: Clone & Setup Backend
 ```
 # Clone repository
 git clone https://github.com/yourusername/b2b-management-system.git
@@ -138,7 +138,7 @@ cd Backend
 npm install
 ```
 
-### Step 4: Configure Environment Variables
+### Step 4️⃣: Configure Environment Variables
 Create .env file in Backend/ folder:
 ```
 DB_HOST=localhost
@@ -150,10 +150,42 @@ PORT=5000
 ```
 **Note:** XAMPP MySQL default password is empty (no password). If you set a password in XAMPP, update DB_PASSWORD accordingly.
 
-### Step 5: Start Backend Server
-`npm run dev`
-You should see:
-like ![this](https://ibb.co/NwNMhDs)
+### Step 5️⃣: Start Backend Server in the Backend folder
+`npm run dev` <br>
+
+You should see something like this 👇: 
+
+![this](<./Screenshots/Screenshot 2025-10-24 221004.png>)
+
+Backend is now running on http://localhost:5000
+
+### Step 6️⃣: Setup Frontend
+Open a new terminal (keep backend running):
+```
+# Navigate to frontend
+cd Frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+You should see something like this 👇: 
+
+![this](<./Screenshots/Screenshot 2025-10-24 222725.png>)
+
+Frontend is now running on http://localhost:5173
+
+## Keep both Frontend & Backend running while testing!
+
+
+
+
+
+
+
+
 
 
 
