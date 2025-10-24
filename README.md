@@ -52,14 +52,31 @@ project-root/
 ├── Frontend/
 │   ├── src/
 │   │   ├── api/
+│   │   │   └── axiosInstance.js
+│   │   ├── assets/
 │   │   ├── components/
+│   │   │   └── AddOrganizationModal.jsx
+│   │   │   └── UsersTab.jsx
 │   │   ├── layouts/
+│   │   │   └── DashboardLayout.jsx
 │   │   ├── pages/
+│   │   │   └── DashboardPage.jsx
+│   │   │   └── OrganizationDetails.jsx
+│   │   │   └── OrganizationDetails.jsx
 │   │   └── App.jsx
 │   │   └── App.css
 │   │   └── main.jsx
 │   │   └── index.css
+│   └── .gitignore
+│   └── README.md
+│   └── eslint.config.js
+│   └── index.html
 │   └── package.json
+│   └── package-lock.json
+│   └── postcss.config.js
+│   └── tailwind.config.js
+│   └── vite.config.js
+│   └── public/
 │
 ├── .gitignore
 └── README.md
@@ -82,6 +99,7 @@ project-root/
 - `POST /api/users` - Create user
 - `PUT /api/users/:id` - Update user
 - `DELETE /api/users/:id` - Delete user
+
 
 
 
