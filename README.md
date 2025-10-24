@@ -1,6 +1,31 @@
-# B2B Organization Management System
+# INTERVIEW-BUDDY-TASK
 
-A full-stack web application for managing B2B organizations and their users. Built with React, Node.js, Express, and MySQL.
+*Empower Your Interview Journey with Confidence and Clarity*
+
+![Last Commit](https://img.shields.io/github/last-commit/Hacke4/Interview-Buddy-Task?color=blue&label=last%20commit)
+![Language](https://img.shields.io/github/languages/top/Hacke4/Interview-Buddy-Task?color=yellow&label=javascript)
+![Languages Count](https://img.shields.io/github/languages/count/Hacke4/Interview-Buddy-Task?color=blue&label=languages)
+
+## Built with the tools and technologies:
+
+![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown)
+![Lucide](https://img.shields.io/badge/Lucide-F05032?style=for-the-badge)
+![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+![Autoprefixer](https://img.shields.io/badge/Autoprefixer-DD3735?style=for-the-badge)
+![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)
+![ENV](https://img.shields.io/badge/.ENV-ecd53f?style=for-the-badge&logo=.env&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-43853d?style=for-the-badge&logo=node-dot-js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61dafb)
+![Sequelize](https://img.shields.io/badge/Sequelize-03afef?style=for-the-badge&logo=sequelize)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+
+
+
 
 ## 🚀 Features
 
@@ -178,6 +203,46 @@ You should see something like this 👇:
 Frontend is now running on http://localhost:5173
 
 ## Keep both Frontend & Backend running while testing!
+
+## 📊 Entity Relationship (ER) Diagram
+![ER](<./Screenshots/1ER.png>)
+
+**Relationship:** One-to-Many (1:N)<br>
+**Cascade:** ON DELETE CASCADE (Delete organization → Delete all its users)<br>
+
+## 🏛️System Architecture (High-Level) 
+This shows your full stack structure:
+<img src="./Screenshots/Sys_Achi.png" alt="Project Preview" width="500">
+
+## 🤖API Endpoint Map
+
+<pre>
+BASE URL: http://localhost:5000/api
+
+Organizations Endpoints:
+├── GET    /organizations              → Get all organizations
+├── POST   /organizations              → Create new organization
+├── GET    /organizations/:id          → Get single organization
+├── PUT    /organizations/:id          → Update organization
+├── DELETE /organizations/:id          → Delete organization
+└── POST   /organizations/:id/logo     → Upload organization logo
+
+Users Endpoints:
+├── GET    /users/organization/:id     → Get users by organization
+├── POST   /users                      → Create new user
+├── PUT    /users/:id                  → Update user
+├── DELETE /users/:id                  → Delete user
+├── GET    /users/count                → Get total user count
+└── GET    /users/count/organization   → Get user count per org
+</pre>
+
+
+
+
+
+
+
+
 
 
 
