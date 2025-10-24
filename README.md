@@ -211,30 +211,37 @@ Frontend is now running on http://localhost:5173
 **Cascade:** ON DELETE CASCADE (Delete organization → Delete all its users)<br>
 
 ## 🏛️System Architecture (High-Level) 
-This shows your full stack structure:
+
+This shows your full stack structure:<br>
 <img src="./Screenshots/Sys_Achi.png" alt="Project Preview" width="500">
 
-## 🤖API Endpoint Map
+## 🎬 Working Demo
 
-<pre>
-BASE URL: http://localhost:5000/api
+https://github.com/user-attachments/assets/72bed702-540f-49d6-b47f-d283beb7e473
 
-Organizations Endpoints:
-├── GET    /organizations              → Get all organizations
-├── POST   /organizations              → Create new organization
-├── GET    /organizations/:id          → Get single organization
-├── PUT    /organizations/:id          → Update organization
-├── DELETE /organizations/:id          → Delete organization
-└── POST   /organizations/:id/logo     → Upload organization logo
+## 🔒 Security
+- Environment variables protected via .gitignore
+- CORS enabled for frontend origin
+- Input validation on backend
+- SQL injection prevention via Sequelize ORM
 
-Users Endpoints:
-├── GET    /users/organization/:id     → Get users by organization
-├── POST   /users                      → Create new user
-├── PUT    /users/:id                  → Update user
-├── DELETE /users/:id                  → Delete user
-├── GET    /users/count                → Get total user count
-└── GET    /users/count/organization   → Get user count per org
-</pre>
+## 🤝 Contributing
+This project was created for interview assessment purposes.<br>
+
+## 📄 License
+This project is for educational and assessment purposes.<br>
+
+## 👤 Author
+Nikhilesh <br>
+**GitHub:** Hacke4 
+
+
+
+
+
+
+
+
 
 
 
