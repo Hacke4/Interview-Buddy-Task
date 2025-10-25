@@ -1,10 +1,9 @@
 import Organization from "../models/Organization.js";
-import User from "../models/User.js";
+import User from "../models/user.js";
 import pkg from "sequelize";
 const { Op } = pkg;
 
-// ✅ MUST be exported functions
-
+// Creating a org
 export const createOrganization = async (req, res) => {
   try {
     const { name, slug, org_email, phone_primary } = req.body;
@@ -24,6 +23,7 @@ export const createOrganization = async (req, res) => {
   }
 };
 
+// getting all org list
 export const getAllOrganizations = async (req, res) => {
   try {
     const { search, status } = req.query;
@@ -56,6 +56,7 @@ export const getAllOrganizations = async (req, res) => {
   }
 };
 
+// getting org by thier id
 export const getOrganizationById = async (req, res) => {
   try {
     const org = await Organization.findByPk(req.params.id, { include: [User] });
@@ -67,6 +68,7 @@ export const getOrganizationById = async (req, res) => {
   }
 };
 
+//updating org using edit option
 export const updateOrganization = async (req, res) => {
   try {
     const org = await Organization.findByPk(req.params.id);
@@ -79,6 +81,7 @@ export const updateOrganization = async (req, res) => {
   }
 };
 
+//deleteing org using delete option
 export const deleteOrganization = async (req, res) => {
   try {
     const org = await Organization.findByPk(req.params.id);
@@ -91,23 +94,25 @@ export const deleteOrganization = async (req, res) => {
   }
 };
 
-export const toggleOrganizationStatus = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const org = await Organization.findByPk(id);
-    if (!org)
-      return res.status(404).json({ message: "Organization not found" });
+// changing org status to active, inactive, blocked
+// export const toggleOrganizationStatus = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const org = await Organization.findByPk(id);
+//     if (!org)
+//       return res.status(404).json({ message: "Organization not found" });
 
-    const newStatus = org.status === "Active" ? "Inactive" : "Active";
-    await org.update({ status: newStatus });
+//     const newStatus = org.status === "Active" ? "Inactive" : "Active";
+//     await org.update({ status: newStatus });
 
-    res.json({ message: `Organization status updated to ${newStatus}`, org });
-  } catch (error) {
-    console.error("Error toggling organization status:", error);
-    res.status(500).json({ message: "Error updating organization status" });
-  }
-};
-// 6️⃣ Get all users belonging to a specific organization
+//     res.json({ message: `Organization status updated to ${newStatus}`, org });
+//   } catch (error) {
+//     console.error("Error toggling organization status:", error);
+//     res.status(500).json({ message: "Error updating organization status" });
+//   }
+// };
+
+//  Getting all users belonging to a specific org
 export const getUsersByOrganization = async (req, res) => {
   try {
     const { orgId } = req.params;
