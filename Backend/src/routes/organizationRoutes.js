@@ -1,6 +1,7 @@
 import express from "express";
 import upload from "../middleware/upload.js";
 import Organization from "../models/organization.js";
+import imgbbUploader from "imgbb-uploader";
 import {
   createOrganization,
   getAllOrganizations,
@@ -23,15 +24,23 @@ router.patch("/:id/status", toggleOrganizationStatus);
 router.post("/:id/logo", upload.single("logo"), async (req, res) => {
   try {
     const org = await Organization.findByPk(req.params.id);
-    if (!org)
+    if (!org) {
       return res.status(404).json({ message: "Organization not found" });
+    }
 
     if (!req.file) {
       return res.status(400).json({ message: "No file uploaded" });
     }
 
-    // Store RELATIVE path (this is key!)
-    org.logo_url = `/uploads/${req.file.filename}`;
+    // Upload to ImgBB
+    const response = await imgbbUploader({
+      apiKey: process.env.IMGBB_API_KEY,
+      base64string: req.file.buffer.toString("base64"),
+      name: `org-${req.params.id}-${Date.now()}`,
+    });
+
+    // Save permanent URL to database
+    org.logo_url = response.url;
     await org.save();
 
     res.json({
@@ -43,5 +52,4 @@ router.post("/:id/logo", upload.single("logo"), async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-
 export default router;
