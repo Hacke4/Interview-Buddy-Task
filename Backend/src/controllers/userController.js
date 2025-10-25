@@ -1,6 +1,6 @@
 // controllers/userController.js
 import User from "../models/user.js";
-import Organization from "../models/Organization.js";
+import Organization from "../models/organization.js";
 
 // Create user under an organization
 // 1️⃣ Create user
