@@ -2,7 +2,7 @@
 import pkg from "sequelize";
 const { DataTypes } = pkg;
 import sequelize from "../config/db.js";
-import Organization from "./Organization.js";
+import Organization from "./organization.js";
 
 const User = sequelize.define(
   "User",
