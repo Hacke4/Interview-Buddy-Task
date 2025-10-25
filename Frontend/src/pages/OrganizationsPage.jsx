@@ -84,7 +84,7 @@ function OrganizationsPage() {
 
   return (
     <div className="max-w-7xl mx-auto">
-      {/* ADD BREADCRUMB HERE */}
+      {/* BREADCRUMB */}
       <div className="mb-4">
         <div className="text-sm text-gray-500">
           <Link to="/" className="hover:text-blue-600">
