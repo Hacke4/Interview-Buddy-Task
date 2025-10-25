@@ -61,31 +61,38 @@ export default function OrganizationDetails() {
 
   const handleLogoChange = async (e) => {
     const file = e.target.files[0];
-    if (file) {
-      setLogoPreview(URL.createObjectURL(file));
+    if (!file) return;
 
-      // Auto-upload the logo
-      setUploading(true);
-      const formDataUpload = new FormData();
-      formDataUpload.append("logo", file);
+    // Show preview immediately from local file
+    setLogoPreview(URL.createObjectURL(file));
 
-      try {
-        const res = await axiosInstance.post(
-          `/organizations/${id}/logo`,
-          formDataUpload,
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
-        setOrganization(res.data);
-        if (res.data.logo_url) {
-          setLogoPreview(`http://localhost:5000${res.data.logo_url}`);
-        }
-        alert("Logo uploaded successfully!");
-      } catch (err) {
-        console.error("Logo upload error:", err);
-        alert("Failed to upload logo");
-      } finally {
-        setUploading(false);
+    // Auto-upload the logo
+    setUploading(true);
+    const formDataUpload = new FormData();
+    formDataUpload.append("logo", file);
+
+    try {
+      const res = await axiosInstance.post(
+        `/organizations/${id}/logo`,
+        formDataUpload,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+
+      // ✅ UPDATE: Use the ImgBB URL directly from response
+      if (res.data.logo_url) {
+        setOrganization((prev) => ({
+          ...prev,
+          logo_url: res.data.logo_url, // This is now ImgBB URL
+        }));
+        setLogoPreview(res.data.logo_url); // Set preview to ImgBB URL
       }
+
+      alert("Logo uploaded successfully!");
+    } catch (err) {
+      console.error("Logo upload error:", err);
+      alert("Failed to upload logo");
+    } finally {
+      setUploading(false);
     }
   };
 
