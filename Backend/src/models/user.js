@@ -44,7 +44,6 @@ const User = sequelize.define(
   }
 );
 
-// ✅ Make sure these 2 lines are present at the end
 Organization.hasMany(User, { foreignKey: "organization_id" });
 User.belongsTo(Organization, { foreignKey: "organization_id" });
 

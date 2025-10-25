@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// 👇 Sequelize's default export is the constructor class
+//  Sequelize's default export is the constructor class
 const { Sequelize } = SequelizeModule.default
   ? SequelizeModule.default
   : SequelizeModule;
