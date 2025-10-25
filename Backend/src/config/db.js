@@ -10,12 +10,21 @@ const { Sequelize } = SequelizeModule.default
   : SequelizeModule;
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASS,
+  process.env.DB_NAME || "interviewbuddy_db", // ← Fallback for local
+  process.env.DB_USER || "root", // ← Fallback for local
+  process.env.DB_PASS || "", // ← Fallback for local
   {
-    host: process.env.DB_HOST,
-    dialect: "postgres",
+    host: process.env.DB_HOST || "localhost", // ← Fallback for local
+    dialect: process.env.DB_DIALECT || "mysql", // ← Auto-switch!
+    port:
+      process.env.DB_PORT ||
+      (process.env.DB_DIALECT === "postgres" ? 5432 : 3306),
+    dialectOptions:
+      process.env.NODE_ENV === "production"
+        ? {
+            ssl: { require: true, rejectUnauthorized: false },
+          }
+        : {},
     logging: false,
   }
 );
