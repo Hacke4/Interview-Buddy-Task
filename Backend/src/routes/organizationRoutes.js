@@ -26,11 +26,11 @@ router.post("/:id/logo", upload.single("logo"), async (req, res) => {
     if (!org)
       return res.status(404).json({ message: "Organization not found" });
 
-    // Check if file exists
     if (!req.file) {
       return res.status(400).json({ message: "No file uploaded" });
     }
 
+    // Store RELATIVE path (this is key!)
     org.logo_url = `/uploads/${req.file.filename}`;
     await org.save();
 

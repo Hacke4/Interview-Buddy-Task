@@ -13,7 +13,7 @@ app.use(express.json());
 // Middleware
 app.use(express.json());
 // org Logo
-// app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 
 // Base Routes
 app.use("/api/organizations", organizationRoutes);
