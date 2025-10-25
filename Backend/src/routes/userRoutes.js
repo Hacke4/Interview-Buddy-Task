@@ -8,7 +8,7 @@ import {
   getTotalUserCount,
   toggleUserStatus,
   getUserCountByOrganization,
-  getUsersByOrganization, // ✅ make sure this is imported
+  getUsersByOrganization,
 } from "../controllers/userController.js";
 
 const router = express.Router();
@@ -17,7 +17,7 @@ router.post("/", createUser);
 router.get("/", getUsers);
 router.get("/count", getTotalUserCount);
 router.get("/count/organization", getUserCountByOrganization);
-router.get("/organization/:orgId", getUsersByOrganization); // ✅ this line must exist
+router.get("/organization/:orgId", getUsersByOrganization);
 router.get("/:id", getUserById);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
