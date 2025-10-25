@@ -31,7 +31,9 @@
 
 > **Note:** First load may take **30–60 seconds** please wait.
 
-## Working demo of the application is in the end.
+## 🎬 Working Demo
+
+https://github.com/user-attachments/assets/72bed702-540f-49d6-b47f-d283beb7e473
 
 ## 🚀 Features
 
@@ -221,9 +223,6 @@ The ER diagram models a one-to-many relationship between Organizations and Users
 This shows your full stack structure:<br>
 <img src="./Screenshots/Sys_Achi.png" alt="Project Preview" width="500">
 
-## 🎬 Working Demo
-
-https://github.com/user-attachments/assets/72bed702-540f-49d6-b47f-d283beb7e473
 
 ## 🔒 Security & Best Practices
 - Used Sequelize ORM to prevent SQL Injection
@@ -244,6 +243,7 @@ Focused on writing clean, modular, and well-documented code with proper error ha
 
 ## 🏁 Conclusion
 This project fulfills all functional and technical requirements of the InterviewBuddy Full-Stack Assignment — showcasing skills in frontend development, backend architecture, database design, and API integration.<br>
+
 
 
 
