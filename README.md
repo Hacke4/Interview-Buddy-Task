@@ -205,10 +205,10 @@ Frontend is now running on http://localhost:5173
 ## Keep both Frontend & Backend running while testing!
 
 ## 📊 Entity Relationship (ER) Diagram
+The ER diagram models a one-to-many relationship between Organizations and Users, where each organization can have multiple users, and deleting an organization cascades to its users.<br>
+
 ![ER](<./Screenshots/1ER.png>)
 
-**Relationship:** One-to-Many (1:N)<br>
-**Cascade:** ON DELETE CASCADE (Delete organization → Delete all its users)<br>
 
 ## 🏛️System Architecture (High-Level) 
 
@@ -219,21 +219,26 @@ This shows your full stack structure:<br>
 
 https://github.com/user-attachments/assets/72bed702-540f-49d6-b47f-d283beb7e473
 
-## 🔒 Security
-- Environment variables protected via .gitignore
-- CORS enabled for frontend origin
-- Input validation on backend
-- SQL injection prevention via Sequelize ORM
+## 🔒 Security & Best Practices
+- Used Sequelize ORM to prevent SQL Injection
+- Environment variables for sensitive credentials
+- File upload validation for logos (type & size)
+- CORS configuration to secure API access
+
 
 ## 🤝 Contributing
-This project was created for interview assessment purposes.<br>
+I built this application end-to-end — backend APIs, database schema, frontend UI, and deployment setup.<br>
+Focused on writing clean, modular, and well-documented code with proper error handling, ensuring scalability and maintainability.<br>
 
-## 📄 License
-This project is for educational and assessment purposes.<br>
+## 🚀 Future Enhancements
+- Add JWT Authentication for secure access
+- Implement Docker Compose for one-click setup
+- Add unit tests using Jest
+- Host demo on Render / Vercel for easy preview
 
-## 👤 Author
-Nikhilesh <br>
-**GitHub:** Hacke4 
+## 🏁 Conclusion
+This project fulfills all functional and technical requirements of the InterviewBuddy Full-Stack Assignment — showcasing skills in frontend development, backend architecture, database design, and API integration.<br>
+
 
 
 
