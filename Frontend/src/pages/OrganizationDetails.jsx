@@ -483,7 +483,7 @@ export default function OrganizationDetails() {
                       disabled={!editMode}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-900 disabled:bg-gray-100 disabled:text-gray-600"
                     >
-                      <option value="0">Upto 5 Coordinators</option>
+                      <option value="0">Upto 0 Coordinators</option>
                       <option value="5">Upto 5 Coordinators</option>
                       <option value="10">Upto 10 Coordinators</option>
                       <option value="20">Upto 20 Coordinators</option>
