@@ -95,22 +95,22 @@ export const deleteOrganization = async (req, res) => {
 };
 
 // changing org status to active, inactive, blocked
-// export const toggleOrganizationStatus = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const org = await Organization.findByPk(id);
-//     if (!org)
-//       return res.status(404).json({ message: "Organization not found" });
+export const toggleOrganizationStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const org = await Organization.findByPk(id);
+    if (!org)
+      return res.status(404).json({ message: "Organization not found" });
 
-//     const newStatus = org.status === "Active" ? "Inactive" : "Active";
-//     await org.update({ status: newStatus });
+    const newStatus = org.status === "Active" ? "Inactive" : "Active";
+    await org.update({ status: newStatus });
 
-//     res.json({ message: `Organization status updated to ${newStatus}`, org });
-//   } catch (error) {
-//     console.error("Error toggling organization status:", error);
-//     res.status(500).json({ message: "Error updating organization status" });
-//   }
-// };
+    res.json({ message: `Organization status updated to ${newStatus}`, org });
+  } catch (error) {
+    console.error("Error toggling organization status:", error);
+    res.status(500).json({ message: "Error updating organization status" });
+  }
+};
 
 //  Getting all users belonging to a specific org
 export const getUsersByOrganization = async (req, res) => {
