@@ -1,6 +1,6 @@
 import express from "express";
 import upload from "../middleware/upload.js";
-import Organization from "../models/Organization.js";
+import Organization from "../models/organization.js";
 import {
   createOrganization,
   getAllOrganizations,
@@ -9,7 +9,7 @@ import {
   deleteOrganization,
   toggleOrganizationStatus,
   getUsersByOrganization,
-} from "../controllers/OrganizationController.js";
+} from "../controllers/organizationController.js";
 
 const router = express.Router();
 

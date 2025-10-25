@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import sequelize from "./config/db.js";
-import organizationRoutes from "./routes/OrganizationRoutes.js";
+import organizationRoutes from "./routes/organizationRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import cors from "cors";
 
