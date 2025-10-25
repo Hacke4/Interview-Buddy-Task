@@ -29,9 +29,9 @@
 - **Backend API:** [https://b2b-backend-ahpl.onrender.com/api](https://b2b-backend-ahpl.onrender.com/api)
 - **Frontend:** [https://org-management-frontend.onrender.com](https://org-management-frontend.onrender.com/)
 
-> **Note:** First load may take **30–60 seconds** as free-tier services wake from sleep mode.
+> **Note:** First load may take **30–60 seconds** please wait.
 
-
+## Working demo of the application is in the end.
 
 ## 🚀 Features
 
@@ -244,6 +244,7 @@ Focused on writing clean, modular, and well-documented code with proper error ha
 
 ## 🏁 Conclusion
 This project fulfills all functional and technical requirements of the InterviewBuddy Full-Stack Assignment — showcasing skills in frontend development, backend architecture, database design, and API integration.<br>
+
 
 
 
