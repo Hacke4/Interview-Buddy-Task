@@ -5,8 +5,6 @@ import organizationRoutes from "./routes/OrganizationRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import cors from "cors";
 
-// ✅ Add this line
-
 dotenv.config();
 const app = express();
 app.use(cors());
