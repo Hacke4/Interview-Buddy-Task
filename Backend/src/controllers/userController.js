@@ -89,6 +89,7 @@ export const getTotalUserCount = async (req, res) => {
 import pkg from "sequelize";
 const { fn, col } = pkg;
 
+// 6️⃣ User Count by Org
 export const getUserCountByOrganization = async (req, res) => {
   try {
     const counts = await User.findAll({
@@ -107,7 +108,7 @@ export const getUserCountByOrganization = async (req, res) => {
       .json({ message: "Error fetching user count by organization" });
   }
 };
-// 6️⃣ Get all users belonging to a specific organization
+// 7️⃣ Get all users belonging to a specific org
 export const getUsersByOrganization = async (req, res) => {
   try {
     const { orgId } = req.params;
@@ -143,7 +144,7 @@ export const getUsersByOrganization = async (req, res) => {
     res.status(500).json({ message: "Error fetching users by organization" });
   }
 };
-// Add to userController.js
+// 8️⃣ User Status toggle
 export const toggleUserStatus = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
