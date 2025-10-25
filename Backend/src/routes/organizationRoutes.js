@@ -24,6 +24,7 @@ router.patch("/:id/status", toggleOrganizationStatus);
 router.post("/:id/logo", upload.single("logo"), async (req, res) => {
   try {
     const org = await Organization.findByPk(req.params.id);
+
     if (!org) {
       return res.status(404).json({ message: "Organization not found" });
     }
@@ -32,23 +33,24 @@ router.post("/:id/logo", upload.single("logo"), async (req, res) => {
       return res.status(400).json({ message: "No file uploaded" });
     }
 
-    // Upload to ImgBB
+    // ✅ Upload to ImgBB
     const response = await imgbbUploader({
-      apiKey: process.env.IMGBB_API_KEY,
+      apiKey: process.env.IMGBB_API_KEY, // ✅ Make sure env variable is set!
       base64string: req.file.buffer.toString("base64"),
       name: `org-${req.params.id}-${Date.now()}`,
     });
 
-    // Save permanent URL to database
+    // ✅ CRITICAL: Save ImgBB URL to database!
     org.logo_url = response.url;
     await org.save();
 
+    // ✅ Return the URL
     res.json({
       message: "Logo uploaded successfully",
-      logo_url: org.logo_url,
+      logo_url: response.url, // ImgBB URL
     });
   } catch (err) {
-    console.error("Upload error:", err);
+    console.error("❌ Upload error:", err);
     res.status(500).json({ message: err.message });
   }
 });
