@@ -24,6 +24,12 @@
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 
+## 🌐 Live Demo
+
+- **Backend API:** [https://b2b-backend-ahpl.onrender.com/api](https://b2b-backend-ahpl.onrender.com/api)
+- **Frontend:** [Your Frontend URL](https://org-management-frontend.onrender.com/)
+
+> **Note:** First load may take **30–60 seconds** as free-tier services wake from sleep mode.
 
 
 
@@ -238,6 +244,7 @@ Focused on writing clean, modular, and well-documented code with proper error ha
 
 ## 🏁 Conclusion
 This project fulfills all functional and technical requirements of the InterviewBuddy Full-Stack Assignment — showcasing skills in frontend development, backend architecture, database design, and API integration.<br>
+
 
 
 
