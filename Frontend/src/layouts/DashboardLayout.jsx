@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 export default function DashboardLayout({ children }) {
   const location = useLocation();
@@ -11,8 +12,9 @@ export default function DashboardLayout({ children }) {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
             <div className="bg-white p-2 rounded-xl shadow-sm">
-              <span className="font-bold text-lg text-indigo-600">LOGO</span>
+              <img src={logo} alt="Logo" className="w-12 h-12 object-contain" />
             </div>
+
             <h1 className="text-lg font-semibold text-gray-700">
               InterviewBuddy Admin
             </h1>
